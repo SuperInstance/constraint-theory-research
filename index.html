@@ -41,6 +41,29 @@
             font-size: 1.1rem;
             margin-top: 1rem;
         }
+        .search-container {
+            max-width: 600px;
+            margin: 2rem auto;
+        }
+        .search-box {
+            width: 100%;
+            padding: 1rem 1.5rem;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.2);
+            border-radius: 12px;
+            color: #e0e0e0;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+        .search-box:focus {
+            outline: none;
+            border-color: #00d9ff;
+            background: rgba(255,255,255,0.08);
+            box-shadow: 0 0 20px rgba(0,217,255,0.2);
+        }
+        .search-box::placeholder {
+            color: #666;
+        }
         .grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -58,6 +81,7 @@
             background: rgba(255,255,255,0.1);
             border-color: rgba(0,217,255,0.3);
             transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.3);
         }
         .card h2 {
             color: #00d9ff;
@@ -83,8 +107,17 @@
             display: flex;
             align-items: center;
             gap: 0.5rem;
+            transition: color 0.2s;
         }
         .card a:hover {
+            color: #00ff88;
+        }
+        .card a::before {
+            content: '→';
+            color: #444;
+            transition: color 0.2s;
+        }
+        .card a:hover::before {
             color: #00ff88;
         }
         .badge {
@@ -109,10 +142,33 @@
             border-radius: 8px;
             text-decoration: none;
             font-weight: 600;
-            transition: transform 0.2s;
+            transition: transform 0.2s, box-shadow 0.2s;
         }
         .quick-links a:hover {
             transform: scale(1.05);
+            box-shadow: 0 5px 20px rgba(0,217,255,0.4);
+        }
+        .stats-bar {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+            margin: 2rem auto;
+            max-width: 800px;
+        }
+        .stat {
+            text-align: center;
+            padding: 1rem;
+            background: rgba(255,255,255,0.03);
+            border-radius: 8px;
+        }
+        .stat-value {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #00ff88;
+        }
+        .stat-label {
+            font-size: 0.85rem;
+            color: #888;
         }
         footer {
             text-align: center;
@@ -123,6 +179,7 @@
         }
         footer a { color: #00d9ff; }
         .emoji { font-size: 1.5rem; }
+        .hidden { display: none; }
     </style>
 </head>
 <body>
@@ -138,6 +195,31 @@
             <a href="https://github.com/SuperInstance/constraint-theory-core">📦 Rust Crate</a>
             <a href="https://pypi.org/project/constraint-theory/">🐍 Python Package</a>
             <a href="README.md">📄 README</a>
+        </div>
+
+        <!-- Search Box -->
+        <div class="search-container">
+            <input type="text" class="search-box" id="searchBox" placeholder="🔍 Search documentation... (Press / to focus)">
+        </div>
+
+        <!-- Stats Bar -->
+        <div class="stats-bar">
+            <div class="stat">
+                <div class="stat-value">82+</div>
+                <div class="stat-label">Test Cases</div>
+            </div>
+            <div class="stat">
+                <div class="stat-value">74ns</div>
+                <div class="stat-label">Per Operation</div>
+            </div>
+            <div class="stat">
+                <div class="stat-value">O(log n)</div>
+                <div class="stat-label">Lookup Speed</div>
+            </div>
+            <div class="stat">
+                <div class="stat-value">78%</div>
+                <div class="stat-label">Code Reduction</div>
+            </div>
         </div>
 
         <div class="grid">
@@ -229,8 +311,57 @@
                 <a href="https://pypi.org/project/constraint-theory/">PyPI</a> •
                 <a href="https://constraint-theory.superinstance.ai">Live Demo</a>
             </p>
-            <p style="margin-top: 1rem;">MIT License • © 2024 SuperInstance</p>
+            <p style="margin-top: 1rem;">MIT License • © 2025 SuperInstance</p>
+            <p style="margin-top: 0.5rem; font-size: 0.8rem;">
+                <kbd style="background: rgba(255,255,255,0.1); padding: 2px 6px; border-radius: 4px;">/</kbd> to search • 
+                <kbd style="background: rgba(255,255,255,0.1); padding: 2px 6px; border-radius: 4px;">Esc</kbd> to clear
+            </p>
         </footer>
     </div>
+
+    <script>
+        // Search functionality
+        const searchBox = document.getElementById('searchBox');
+        const cards = document.querySelectorAll('.card');
+        
+        // Focus search on "/" key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === '/' && document.activeElement !== searchBox) {
+                e.preventDefault();
+                searchBox.focus();
+            }
+            if (e.key === 'Escape') {
+                searchBox.value = '';
+                searchBox.blur();
+                filterCards('');
+            }
+        });
+        
+        // Filter cards on input
+        searchBox.addEventListener('input', (e) => {
+            filterCards(e.target.value.toLowerCase());
+        });
+        
+        function filterCards(query) {
+            cards.forEach(card => {
+                const text = card.textContent.toLowerCase();
+                const links = card.querySelectorAll('a');
+                let hasVisibleLink = false;
+                
+                links.forEach(link => {
+                    const linkText = link.textContent.toLowerCase();
+                    const href = link.getAttribute('href').toLowerCase();
+                    if (!query || linkText.includes(query) || href.includes(query)) {
+                        link.parentElement.style.display = '';
+                        hasVisibleLink = true;
+                    } else {
+                        link.parentElement.style.display = 'none';
+                    }
+                });
+                
+                card.classList.toggle('hidden', !hasVisibleLink && query);
+            });
+        }
+    </script>
 </body>
 </html>
