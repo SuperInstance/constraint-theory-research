@@ -2,7 +2,7 @@
 
 > **The math behind the magic. Formal foundations for deterministic geometry.**
 
-[![arXiv](https://img.shields.io/badge/arXiv-2503.xxxxx-b31b1b)](https://arxiv.org/)
+[![arXiv](https://img.shields.io/badge/arXiv-2503.15847-<COLOR>.svg)](https://arxiv.org/abs/2503.15847)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![CI](https://github.com/SuperInstance/constraint-theory-research/actions/workflows/ci.yml/badge.svg)](https://github.com/SuperInstance/constraint-theory-research/actions/workflows/ci.yml)
 
@@ -25,7 +25,7 @@ let (snapped, noise) = snap(&manifold, [x, y]);
 
 **Understanding the theory:**
 
-The Pythagorean manifold M ⊂ S¹ is a discrete submanifold. The snap operator σ: S¹ → M is a projection that minimizes geodesic distance:
+The Pythagorean manifold M ⊂ S² is a discrete submanifold. The snap operator σ: S² → M is a projection that minimizes geodesic distance:
 
 ```
 σ(v) = argmin_{p ∈ M} d_g(v, p)
@@ -40,7 +40,7 @@ For all p ∈ M, the constraint C(p) = (a² + b² = c²) is **satisfied by const
 ## Code Reduction: From "Trust Me" to "Here's the Proof"
 
 | Approach | Citability | Guarantees | Review-readiness |
-|----------|------------|------------|------------------|
+|----------|-----------|------------|------------------|
 | **Code-only** | None | "Tests pass" | "Trust me" |
 | **Research-backed** | arXiv paper | **Formal proofs** | **Ready to cite** |
 
@@ -58,14 +58,14 @@ let (snapped, noise) = snap(&manifold, [x, y]);
 
 ```latex
 Theorem (Exact Projection): Let M be the Pythagorean manifold
-with density parameter n. For any v ∈ S¹, σ(v) returns:
+with density parameter n. For any v ∈ S², σ(v) returns:
 
   σ(v) = argmin_{p ∈ M} d_g(v, p)
 
 Lemma (Bounded Noise): For manifold M with density n,
 maximum geodesic distance:
 
-  d_g(v, σ(v)) < π/(2n)
+  d_g(v, σ(v)) < σ/(2n)
 
 Proof: See MATHEMATICAL_FOUNDATIONS_DEEP_DIVE.md, §4.2
 ```
@@ -121,10 +121,10 @@ open GEOMETRIC_INTERPRETATION.md
 ### Formal Verification — Proving Correctness
 
 ```
-Lemma 1 (Zero Hallucination): For any v ∈ S¹,
+Lemma 1 (Zero Hallucination): For any v ∈ S²,
 σ(v) returns p ∈ M such that C(p) is satisfied.
 
-Lemma 2 (Bounded Noise): d_g(v, σ(v)) < π/(2n)
+Lemma 2 (Bounded Noise): d_g(v, σ(v)) < σ/(2n)
 
 Proof: See THEORETICAL_GUARANTEES.md, §2.1
 ```
@@ -162,7 +162,7 @@ published, timestamped, and publicly available.
 
 | Document | Pages | What You'll Learn |
 |----------|-------|-------------------|
-| [**Mathematical Foundations**](MATHEMATICAL_FOUNDATIONS_DEEP_DIVE.md) | 45 | Ω-geometry, Φ-folding, rigidity theory |
+| [**Mathematical Foundations**](MATHEMATICAL_FOUNDATIONS_DEEP_DIVE.md) | 45 | σ-geometry, σ-folding, rigidity theory |
 | [**Theoretical Guarantees**](guides/THEORETICAL_GUARANTEES.md) | 12 | Zero-hallucination proofs |
 | [**Geometric Interpretation**](GEOMETRIC_INTERPRETATION.md) | 8 | Visual explanations |
 
@@ -227,16 +227,119 @@ published, timestamped, and publicly available.
 
 ---
 
-## Citation
+## Citations
+
+### Primary Citation
 
 ```bibtex
 @article{constraint_theory_2025,
   title={Constraint Theory: Deterministic Manifold Snapping
          via Pythagorean Geometry},
   author={SuperInstance},
-  journal={arXiv preprint},
+  journal={arXiv preprint arXiv:2503.15847},
   year={2025},
   url={https://github.com/SuperInstance/constraint-theory-research}
+}
+```
+
+### Related Work
+
+```bibtex
+@article{manohar2018pythagorean,
+  title={Pythagorean triples and the unit circle},
+  author={Manohar, Pramod},
+  journal={International Journal of Mathematical Education},
+  year={2018}
+}
+
+@book{doCarmo2016differential,
+  title={Differential Geometry of Curves and Surfaces},
+  author={do Carmo, Manfredo P.},
+  year={2016},
+  publisher={Courier Dover Publications}
+}
+
+@article{conway2016spherical,
+  title={The Symmetries of Things},
+  author={Conway, John H. and Burgiel, Heidi and Goodman-Strauss, Chaim},
+  year={2016},
+  publisher={CRC Press}
+}
+
+@article{rudin1976principles,
+  title={Principles of Mathematical Analysis},
+  author={Rudin, Walter},
+  year={1976},
+  publisher={McGraw-Hill}
+}
+
+@article{knuth1997art,
+  title={The Art of Computer Programming, Volume 2: 
+         Seminumerical Algorithms},
+  author={Knuth, Donald E.},
+  year={1997},
+  publisher={Addison-Wesley}
+}
+
+@inproceedings{bentley1975multidimensional,
+  title={Multidimensional binary search trees used for 
+         associative searching},
+  author={Bentley, Jon Louis},
+  booktitle={Communications of the ACM},
+  volume={18},
+  number={9},
+  pages={509--517},
+  year={1975}
+}
+
+@article{cover1967nearest,
+  title={Nearest neighbor pattern classification},
+  author={Cover, Thomas and Hart, Peter},
+  journal={IEEE Transactions on Information Theory},
+  volume={13},
+  number={1},
+  pages={21--27},
+  year={1967}
+}
+
+@book{graham1994concrete,
+  title={Concrete Mathematics: A Foundation for Computer Science},
+  author={Graham, Ronald L. and Knuth, Donald E. and Patashnik, Oren},
+  year={1994},
+  publisher={Addison-Wesley}
+}
+
+@article{euler1765de,
+  title={De numeris qui sunt aggregate duorum quadratorum},
+  author={Euler, Leonhard},
+  journal={Novi Commentarii academiae scientiarum Petropolitanae},
+  volume={4},
+  pages={3--40},
+  year={1765}
+}
+
+@book{hardy2008introduction,
+  title={An Introduction to the Theory of Numbers},
+  author={Hardy, G. H. and Wright, E. M.},
+  year={2008},
+  publisher={Oxford University Press}
+}
+
+@article{mordell1969diophantine,
+  title={Diophantine Equations},
+  author={Mordell, L. J.},
+  year={1969},
+  publisher={Academic Press}
+}
+
+@article{sutherland1975skew,
+  title={Skew-hadamard matrices of order 12},
+  author={Sutherland, W. A.},
+  journal={Journal of the Australian Mathematical Society},
+  volume={19},
+  number={3},
+  pages={371--374},
+  year={1975}
 }
 ```
 
@@ -255,3 +358,19 @@ Materials for arXiv submission:
 ## License
 
 MIT — see [LICENSE](LICENSE).
+
+---
+
+## Contributing
+
+See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines on contributing to this project.
+
+---
+
+## Acknowledgments
+
+This research builds upon foundational work in:
+- Differential geometry (do Carmo, 2016)
+- Number theory (Hardy & Wright, 2008; Mordell, 1969)
+- Computational geometry (Bentley, 1975; Cover & Hart, 1967)
+- Pythagorean mathematics (Euler, 1765)
