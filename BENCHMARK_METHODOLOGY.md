@@ -242,6 +242,103 @@ We encourage:
 - Suggestions for additional benchmarks
 - Comparison with new methods
 
+## E. Quantization Benchmarks
+
+**Problem**: Quantize neural network weights and embeddings while preserving constraints
+
+**Metrics**:
+- Distortion (MSE between original and quantized)
+- Constraint violation rate (percentage of constraints broken)
+- Compression ratio (memory reduction)
+- Inference latency (milliseconds per query)
+
+**Comparison Methods**:
+- Standard uniform quantization
+- Product quantization (PQ)
+- Optimized Product Quantization (OPQ)
+- TurboQuant (baseline)
+- Pythagorean Quantization (our method)
+
+**Example Problem**:
+```
+Given: Pre-trained model weights (FP32)
+Task: Quantize to 4-bit with unit norm constraint preservation
+Measure: Distortion, constraint violation, latency
+```
+
+### E.1 Unit Norm Preservation Benchmark
+
+**Setup**: Generate 100,000 random unit vectors in R^128
+
+**Procedure**:
+1. Quantize vectors using each method
+2. Measure norm deviation: |‖q(v)‖ - 1|
+3. Count violation rate: P(|‖q(v)‖ - 1| > ε)
+
+**Target Metrics**:
+| Method | Bits | Mean Norm Error | Violation Rate (ε=0.01) |
+|--------|------|-----------------|-------------------------|
+| Uniform 4-bit | 4 | 0.05 | 12% |
+| Uniform 8-bit | 8 | 0.01 | 3% |
+| PolarQuant | 4 | < 10⁻¹⁰ | 0% |
+| Pythagorean | 4 | < 10⁻¹⁵ | 0% |
+
+### E.2 Embedding Quantization Benchmark
+
+**Setup**: Pre-computed embeddings from sentence-transformers (10M vectors)
+
+**Procedure**:
+1. Quantize embeddings
+2. Build ANN index
+3. Query nearest neighbors
+4. Measure recall@10 and query latency
+
+**Target Metrics**:
+| Method | Compression | Recall@10 | Latency (ms) |
+|--------|-------------|-----------|--------------|
+| FP32 | 1× | 1.000 | 45 |
+| PQ-8 | 8× | 0.92 | 8 |
+| OPQ-8 | 8× | 0.94 | 7 |
+| QJL | 32× | 0.89 | 3 |
+| Pythagorean | 8× | 0.95 | 6 |
+
+### E.3 LLM Weight Quantization Benchmark
+
+**Setup**: Transformer model (7B parameters)
+
+**Procedure**:
+1. Quantize weights to ternary {-1, 0, +1}
+2. Measure perplexity on validation set
+3. Measure inference latency and memory
+
+**Target Metrics**:
+| Method | Memory | Perplexity Δ | Latency Speedup |
+|--------|--------|--------------|-----------------|
+| FP32 | 28 GB | baseline | 1× |
+| INT8 | 7 GB | +0.02 | 2× |
+| GPTQ-4bit | 3.5 GB | +0.05 | 3× |
+| BitNet | 1.8 GB | +0.01 | 5× |
+| Pythagorean | 1.8 GB | +0.01 | 5× |
+
+### E.4 Rotation Quantization Benchmark
+
+**Setup**: 1 million random SO(3) rotation matrices
+
+**Procedure**:
+1. Convert to quaternion representation
+2. Quantize quaternion components
+3. Measure orthogonality error: ‖Q^T Q - I‖
+
+**Target Metrics**:
+| Method | Bits | Orthogonality Error | Drift (1000 ops) |
+|--------|------|---------------------|------------------|
+| FP64 | 64 | < 10⁻¹⁵ | 0 |
+| FP32 | 32 | < 10⁻⁷ | 10⁻⁶ |
+| FP16 | 16 | < 10⁻³ | 10⁻² |
+| Hurwitz Lattice | 12 | < 10⁻¹⁵ | 0 |
+
+---
+
 ## Future Work
 
 ### Planned Benchmarks
@@ -250,6 +347,7 @@ We encourage:
 2. **Dynamic Constraints**: Time-varying and physics simulations
 3. **Distributed Solving**: Multi-agent constraint satisfaction
 4. **Quantum Constraints**: Quantum circuit constraint solving
+5. **Hidden Dimension Scaling**: Benchmark hidden dimension encoding across precision levels
 
 ### Methodology Improvements
 
@@ -257,6 +355,7 @@ We encourage:
 2. **Larger Datasets**: Scale to millions of constraints
 3. **Diversity Metrics**: Evaluate across different constraint types
 4. **Energy Efficiency**: Measure power consumption
+5. **Hardware Acceleration**: GPU/TPU/NPU benchmark suite
 
 ## Contact
 

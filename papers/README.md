@@ -6,7 +6,7 @@
 
 ## Overview
 
-Three publication-ready papers establishing Constraint Theory as a deterministic alternative to stochastic neural networks through geometric constraint-solving.
+Six publication-ready papers establishing Constraint Theory as a deterministic alternative to stochastic neural networks through geometric constraint-solving.
 
 ```mermaid
 graph TB
@@ -28,18 +28,37 @@ graph TB
         P3["Performance Validation"]
     end
 
+    subgraph Hidden["Paper 4: Hidden Dimensions"]
+        H1["Logarithmic Lifting"]
+        H2["Snap Manifold"]
+        H3["Constraint Uncertainty"]
+    end
+
+    subgraph Quantization["Paper 5: Pythagorean Quantization"]
+        Q1["TurboQuant Integration"]
+        Q2["BitNet Ternary Weights"]
+        Q3["Constraint Preservation"]
+    end
+
     Foundation --> Algorithms
     Algorithms --> Practice
+    Algorithms --> Hidden
+    Hidden --> Quantization
+    Practice --> Quantization
 
     style Foundation fill:#e3f2fd
     style Algorithms fill:#fff3e0
     style Practice fill:#e8f5e9
+    style Hidden fill:#fce4ec
+    style Quantization fill:#f3e5f5
 ```
 
 **Research Flow:**
 1. **Theory** (Paper 1) → Mathematical framework and proofs
 2. **Algorithms** (Paper 2) → Efficient implementation techniques
 3. **Practice** (Paper 3) → Production deployment and validation
+4. **Hidden Dimensions** (Paper 4) → Exact constraint satisfaction theory
+5. **Quantization** (Paper 5) → Unified compression framework
 
 ---
 

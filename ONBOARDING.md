@@ -114,7 +114,7 @@ constraint-theory-research/
 
 ## Reading Guide
 
-### For Newcomers
+### For Newcomers (Updated 2025-03)
 
 1. **Start Here:**
    - `QUICKSTART.md` - 5-minute introduction
@@ -124,9 +124,35 @@ constraint-theory-research/
    - `PAPER.md` - Main research paper
    - `MATHEMATICAL_FOUNDATIONS.md` - Mathematical details
 
-3. **Explore:**
+3. **New Papers (Iteration 1):**
+   - `papers/paper4_hidden_dimensions.tex` - Hidden Dimension Encoding theory
+   - `papers/paper5_quantization_integration.tex` - Pythagorean Quantization
+
+4. **Explore:**
    - `advanced/` - Cutting-edge research
    - `reports/` - Validation experiments
+
+### Recommended Reading Order (Full Curriculum)
+
+**Week 1: Foundations**
+1. `QUICKSTART.md` - Get oriented
+2. `papers/paper1_*.tex` - Geometric foundations
+3. `GEOMETRIC_INTERPRETATION.md` - Visual understanding
+
+**Week 2: Algorithms**
+1. `papers/paper2_*.tex` - Pythagorean snapping optimization
+2. `papers/paper4_*.tex` - Hidden dimension encoding
+3. `THEORETICAL_GUARANTEES.md` - Zero-hallucination proofs
+
+**Week 3: Applications**
+1. `papers/paper3_*.tex` - Production deployment
+2. `papers/paper5_*.tex` - Quantization integration
+3. `BENCHMARK_METHODOLOGY.md` - Experimental validation
+
+**Week 4: Advanced Topics**
+1. `advanced/HIGH_DIMENSIONAL_CONSTRAINT_THEORY.md`
+2. `advanced/QUANTUM_CONSTRAINT_THEORY.md`
+3. `VALIDATION_EXPERIMENTS.md`
 
 ### For Researchers
 

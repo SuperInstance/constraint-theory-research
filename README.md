@@ -214,7 +214,9 @@ SuperInstance. "Constraint Theory: Deterministic Manifold Snapping via Pythagore
 | [Paper 1: Geometric Foundation](papers/paper1_constraint_theory_geometric_foundation.tex) | arXiv Ready | Core theory & architecture |
 | [Paper 2: Pythagorean Snapping](papers/paper2_pythagorean_snapping.tex) | arXiv Ready | Algorithm & complexity |
 | [Paper 3: Production Practice](papers/paper3_deterministic_ai_practice.tex) | arXiv Ready | Applications & deployment |
-| [Paper 4: Dodecet Encoding](papers/DODECET_CONSTRAINT_SYNTHESIS.md) | Draft | 12-bit precision encoding |
+| [Paper 4: Hidden Dimensions](papers/paper4_hidden_dimensions.tex) | Draft | Exact constraint satisfaction via lifting |
+| [Paper 5: Quantization Integration](papers/paper5_quantization_integration.tex) | Draft | Unified quantization framework |
+| [Paper 6: Dodecet Encoding](papers/DODECET_CONSTRAINT_SYNTHESIS.md) | Draft | 12-bit precision encoding |
 
 **[View complete paper index →](papers/INDEX.md)**
 
