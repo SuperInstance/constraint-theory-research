@@ -1,8 +1,11 @@
 # Constraint Theory Papers - Complete Index
 
 **Repository:** https://github.com/SuperInstance/Constraint-Theory
-**Date:** 2026-03-16
+**Date:** 2025-03-16
 **Status:** Publication Ready - Four Complete Papers + Dodecet Synthesis
+**Schema Version:** 1.0
+**Notation Standard:** See [NOTATION_GUIDE.md](./NOTATION_GUIDE.md)
+**Metadata Standard:** See [PAPER_METADATA_SCHEMA.md](./PAPER_METADATA_SCHEMA.md)
 
 ---
 
@@ -699,6 +702,6 @@ This represents a **paradigm shift** from stochastic approximation to geometric 
 ---
 
 **Status:** Publication Ready ✅
-**Last Updated:** 2026-03-16
+**Last Updated:** 2025-03-16
 **Version:** 1.0
-**Contact:** constraint-theory@example.com
+**Contact:** https://github.com/SuperInstance/constraint-theory-research

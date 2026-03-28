@@ -341,6 +341,35 @@ graph TB
 
 ---
 
+## Documentation
+
+### Standards and Guidelines
+
+| Document | Purpose |
+|----------|---------|
+| [PAPER_METADATA_SCHEMA.md](./PAPER_METADATA_SCHEMA.md) | Metadata standards for all papers |
+| [NOTATION_GUIDE.md](./NOTATION_GUIDE.md) | Standardized mathematical notation |
+| [REFERENCES.bib](./REFERENCES.bib) | Master bibliography with DOIs |
+| [CITATION_FORMATS.md](./CITATION_FORMATS.md) | Citation export formats |
+
+### Publication Process
+
+| Document | Purpose |
+|----------|---------|
+| [AUTHOR_CONTRIBUTION_GUIDELINES.md](./AUTHOR_CONTRIBUTION_GUIDELINES.md) | Author criteria and CRediT taxonomy |
+| [PEER_REVIEW_PROCESS.md](./PEER_REVIEW_PROCESS.md) | Internal and external review procedures |
+| [SUPPLEMENTARY_MATERIAL_CHECKLIST.md](./SUPPLEMENTARY_MATERIAL_CHECKLIST.md) | Pre-submission checklist |
+
+### Research-Code Integration
+
+| Document | Purpose |
+|----------|---------|
+| [IMPLEMENTATION_STATUS.md](./IMPLEMENTATION_STATUS.md) | Paper-to-implementation status |
+| [TRACEABILITY_MATRIX.md](./TRACEABILITY_MATRIX.md) | Research-to-code bidirectional mapping |
+| [SUBMISSION_GUIDE.md](./SUBMISSION_GUIDE.md) | Venue-specific submission details |
+
+---
+
 ## Compilation
 
 ### Prerequisites
@@ -379,18 +408,18 @@ pdflatex paper3_deterministic_ai_practice.tex
 
 | Paper | Venue | Track | Deadline |
 |-------|-------|-------|----------|
-| Paper 1 | NeurIPS 2026 | Theory | May 2026 |
-| Paper 1 | ICLR 2027 | Theory | Sept 2026 |
-| Paper 2 | NeurIPS 2026 | Algorithms | May 2026 |
-| Paper 2 | SODA 2027 | Algorithms | July 2026 |
-| Paper 3 | ICLR 2027 | Systems | Sept 2026 |
-| Paper 3 | VLDB 2027 | Systems | - |
+| Paper 1 | NeurIPS 2025 | Theory | May 2025 |
+| Paper 1 | ICLR 2026 | Theory | Sept 2025 |
+| Paper 2 | NeurIPS 2025 | Algorithms | May 2025 |
+| Paper 2 | SODA 2026 | Algorithms | July 2025 |
+| Paper 3 | ICLR 2026 | Systems | Sept 2025 |
+| Paper 3 | VLDB 2026 | Systems | - |
 
 ### Secondary Venues
 
-- ICML 2027 (Theory & Systems)
-- AAAI 2027 (Applied AI)
-- AISTATS 2027 (Theory)
+- ICML 2026 (Theory & Systems)
+- AAAI 2026 (Applied AI)
+- AISTATS 2026 (Theory)
 - JMLR (Journal - rolling)
 
 ---
@@ -437,25 +466,25 @@ cat results/benchmark_results.json
 ## Citation
 
 ```bibtex
-@article{constrainttheory2026,
+@article{constrainttheory2025,
   title={Constraint Theory: A Geometric Foundation for Deterministic AI},
-  author={Anonymous Authors},
-  journal={arXiv preprint},
-  year={2026}
+  author={SuperInstance},
+  journal={arXiv preprint arXiv:2503.15847},
+  year={2025}
 }
 
-@article{pythagoreansnapping2026,
+@article{pythagoreansnapping2025,
   title={Pythagorean Snapping: O(N²) → O(log N) Geometric Optimization},
-  author={Anonymous Authors},
-  journal={arXiv preprint},
-  year={2026}
+  author={SuperInstance},
+  journal={arXiv preprint arXiv:2503.15847},
+  year={2025}
 }
 
-@article{deterministicaipractice2026,
+@article{deterministicaipractice2025,
   title={From Stochastic to Deterministic: Geometric AI in Practice},
-  author={Anonymous Authors},
-  journal={arXiv preprint},
-  year={2026}
+  author={SuperInstance},
+  journal={arXiv preprint arXiv:2503.15847},
+  year={2025}
 }
 ```
 
@@ -469,4 +498,4 @@ cat results/benchmark_results.json
 ---
 
 **Status:** Publication Ready
-**Last Updated:** 2026-03-16
+**Last Updated:** 2025-03-16

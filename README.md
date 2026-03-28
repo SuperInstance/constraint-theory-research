@@ -65,7 +65,7 @@ open GEOMETRIC_INTERPRETATION.md
 | Document | Pages | What You'll Learn |
 |----------|-------|-------------------|
 | [**Mathematical Foundations**](MATHEMATICAL_FOUNDATIONS_DEEP_DIVE.md) | 45 | Ω-geometry, Φ-folding, rigidity theory |
-| [**Theoretical Guarantees**](guides/THEORETICAL_GUARANTEES.md) | 12 | Zero-hallucination proofs |
+| [**Theoretical Guarantees**](THEORETICAL_GUARANTEES.md) | 12 | Zero-hallucination proofs |
 | [**Geometric Interpretation**](GEOMETRIC_INTERPRETATION.md) | 8 | Visual explanations |
 
 ---
@@ -178,7 +178,7 @@ Direction: Spherical codes and lattice theory
 Impact: ML embedding quantization, robotics
 ```
 
-**[See all open problems →](OPEN_PROBLEMS.md)**
+**[See all open problems →](OPEN_QUESTIONS_RESEARCH.md)**
 
 ---
 
@@ -211,9 +211,12 @@ SuperInstance. "Constraint Theory: Deterministic Manifold Snapping via Pythagore
 
 | Paper | Status | Focus |
 |-------|--------|-------|
-| [paper1_constraint_theory_geometric_foundation.tex](papers/paper1_constraint_theory_geometric_foundation.tex) | Draft | Core theory |
-| [paper2_pythagorean_snapping.tex](papers/paper2_pythagorean_snapping.tex) | Draft | Algorithm & complexity |
-| [paper3_deterministic_ai_practice.tex](papers/paper3_deterministic_ai_practice.tex) | Draft | Applications |
+| [Paper 1: Geometric Foundation](papers/paper1_constraint_theory_geometric_foundation.tex) | arXiv Ready | Core theory & architecture |
+| [Paper 2: Pythagorean Snapping](papers/paper2_pythagorean_snapping.tex) | arXiv Ready | Algorithm & complexity |
+| [Paper 3: Production Practice](papers/paper3_deterministic_ai_practice.tex) | arXiv Ready | Applications & deployment |
+| [Paper 4: Dodecet Encoding](papers/DODECET_CONSTRAINT_SYNTHESIS.md) | Draft | 12-bit precision encoding |
+
+**[View complete paper index →](papers/INDEX.md)**
 
 ---
 
@@ -240,12 +243,38 @@ SuperInstance. "Constraint Theory: Deterministic Manifold Snapping via Pythagore
 
 ## 🌟 Ecosystem
 
-| Repo | What It Does |
-|------|--------------|
-| **[constraint-theory-core](https://github.com/SuperInstance/constraint-theory-core)** | Rust crate |
-| **[constraint-theory-python](https://github.com/SuperInstance/constraint-theory-python)** | Python bindings |
-| **[constraint-theory-web](https://github.com/SuperInstance/constraint-theory-web)** | Interactive demos |
-| **[constraint-theory-research](https://github.com/SuperInstance/constraint-theory-research)** | This repo — Mathematical foundations |
+| Repo | What It Does | Key Features |
+|------|--------------|--------------|
+| **[constraint-theory-core](https://github.com/SuperInstance/constraint-theory-core)** | Rust crate | 82 tests passing, ~100ns snap, SIMD |
+| **[constraint-theory-python](https://github.com/SuperInstance/constraint-theory-python)** | Python bindings | NumPy integration, batch processing |
+| **[constraint-theory-web](https://github.com/SuperInstance/constraint-theory-web)** | Interactive demos | 49 visualizations, zero setup |
+| **[constraint-theory-research](https://github.com/SuperInstance/constraint-theory-research)** | This repo | Mathematical foundations |
+
+### Quick Links to Implementations
+
+**Rust (Core Library):**
+```rust
+// From constraint-theory-core
+use constraint_theory_core::{PythagoreanManifold, snap};
+
+let manifold = PythagoreanManifold::new(200);
+let (exact, noise) = snap(&manifold, [0.577, 0.816]);
+// exact = [0.6, 0.8], noise = 0.0236
+```
+
+**Python:**
+```python
+# From constraint-theory-python
+from constraint_theory import PythagoreanManifold
+
+manifold = PythagoreanManifold(200)
+x, y, noise = manifold.snap(0.577, 0.816)  # (0.6, 0.8, 0.0236)
+```
+
+**Interactive Visualization:**
+- [Pythagorean Snapping Demo](https://constraint-theory.superinstance.ai/simulators/pythagorean/)
+- [KD-Tree Visualization](https://constraint-theory.superinstance.ai/simulators/kdtree/)
+- [Rigidity Explorer](https://constraint-theory.superinstance.ai/experiments/rigidity/)
 
 ---
 

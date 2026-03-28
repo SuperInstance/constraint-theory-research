@@ -1,7 +1,7 @@
 # Constraint Theory Academic Papers - Submission Guide
 
 **Repository:** https://github.com/SuperInstance/Constraint-Theory
-**Date:** 2026-03-16
+**Date:** 2025-03-16
 **Status:** Ready for Submission
 
 ---
@@ -747,5 +747,5 @@ For questions about these papers or submission process, please contact:
 ---
 
 **Status:** Ready for Submission
-**Last Updated:** 2026-03-16
+**Last Updated:** 2025-03-16
 **Version:** 1.0

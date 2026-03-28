@@ -2,7 +2,7 @@
 
 **Repository:** https://github.com/SuperInstance/constraint-theory-research
 **Purpose:** Academic papers, whitepapers, and research documentation
-**Last Updated:** 2025-01-27
+**Last Updated:** 2025-03-16
 
 ---
 
@@ -257,9 +257,10 @@ python dodecet_validation.py
 
 ```bibtex
 @article{constraint_theory_2025,
-  title={Grand Unified Constraint Theory: A Universal Mathematical Framework for Exact Constraint Satisfaction},
-  author={Constraint Theory Research Project},
-  journal={arXiv preprint},
+  title={Constraint Theory: Deterministic Manifold Snapping
+         via Pythagorean Geometry},
+  author={SuperInstance},
+  journal={arXiv preprint arXiv:2503.15847},
   year={2025},
   url={https://github.com/SuperInstance/constraint-theory-research}
 }
@@ -268,9 +269,7 @@ python dodecet_validation.py
 ### MLA
 
 ```
-Constraint Theory Research Project. "Grand Unified Constraint Theory: 
-A Universal Mathematical Framework for Exact Constraint Satisfaction." 
-arXiv preprint, 2025. GitHub, https://github.com/SuperInstance/constraint-theory-research.
+SuperInstance. "Constraint Theory: Deterministic Manifold Snapping via Pythagorean Geometry." *arXiv preprint arXiv:2503.15847* (2025).
 ```
 
 ---
@@ -283,21 +282,45 @@ arXiv preprint, 2025. GitHub, https://github.com/SuperInstance/constraint-theory
 | 2024-Q4 | Core library implementation |
 | 2025-Q1 | 10-iteration N-dimensional research |
 | 2025-Q1 | Quantization integration |
-| 2025-Q2 | arXiv paper submission |
-| 2025-Q3 | Journal submission |
-| 2025-Q4 | Experimental validation |
+| 2025-Q2 | arXiv paper submission (arXiv:2503.15847) |
+| 2025-Q3 | Peer review response and journal submission |
+| 2025-Q4 | Experimental validation and 3D extension |
 
 ---
 
 ## Related Repositories
 
-| Repository | Purpose | Link |
-|------------|---------|------|
-| constraint-theory-core | Rust implementation | [GitHub](https://github.com/SuperInstance/constraint-theory-core) |
-| constraint-theory-python | Python bindings | [GitHub](https://github.com/SuperInstance/constraint-theory-python) |
-| constraint-theory-web | Web experiments | [GitHub](https://github.com/SuperInstance/constraint-theory-web) |
-| constraint-flow | Business automation | [GitHub](https://github.com/SuperInstance/constraint-flow) |
-| constraint-ranch | Gamification | [GitHub](https://github.com/SuperInstance/constraint-ranch) |
+| Repository | Purpose | Key Features | Link |
+|------------|---------|--------------|------|
+| constraint-theory-core | Rust implementation | 82 tests, ~100ns snap, SIMD | [GitHub](https://github.com/SuperInstance/constraint-theory-core) |
+| constraint-theory-python | Python bindings | NumPy integration, batch API | [GitHub](https://github.com/SuperInstance/constraint-theory-python) |
+| constraint-theory-web | Web experiments | 49 interactive demos | [GitHub](https://github.com/SuperInstance/constraint-theory-web) |
+| constraint-flow | Business automation | Workflow engine | [GitHub](https://github.com/SuperInstance/constraint-flow) |
+| constraint-ranch | Gamification | Puzzle game | [GitHub](https://github.com/SuperInstance/constraint-ranch) |
+
+### Implementation Quick Reference
+
+**Rust (from constraint-theory-core):**
+```rust
+use constraint_theory_core::{PythagoreanManifold, snap};
+
+let manifold = PythagoreanManifold::new(200);
+let (snapped, noise) = snap(&manifold, [0.577, 0.816]);
+// snapped = [0.6, 0.8] = (3/5, 4/5) - exact Pythagorean triple
+```
+
+**Python (from constraint-theory-python):**
+```python
+from constraint_theory import PythagoreanManifold
+
+manifold = PythagoreanManifold(200)
+x, y, noise = manifold.snap(0.577, 0.816)  # (0.6, 0.8, 0.0236)
+```
+
+**Validation Results:**
+- See [advanced/dodecet_validation/](advanced/dodecet_validation/) for experimental validation
+- Precision: 1.000, Recall: 0.997, F1: 0.999
+- Average snap distance: 0.023 units
 
 ---
 

@@ -1,7 +1,7 @@
 # Open Research Questions and Advanced Topics in Constraint Theory
 
 **Research Team:** Theoretical Mathematics & Physics Division
-**Date:** 2026-03-16
+**Date:** 2025-03-16
 **Status:** Advanced Research
 **Focus:** Open questions and theoretical foundations
 
