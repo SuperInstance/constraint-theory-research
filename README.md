@@ -140,19 +140,6 @@ Proof: See MATHEMATICAL_FOUNDATIONS_DEEP_DIVE.md, §4.2
 
 ---
 
-## 💬 What Researchers Are Saying
-
-> "The theoretical guarantees section saved our paper from reviewer #2. We could cite exact bounds instead of hand-waving."
-> — *PhD Candidate, computational geometry*
-
-> "Open problems section gave me a thesis direction. The 3D extension challenge is perfect for my dissertation."
-> — *Graduate Student, numerical analysis*
-
-> "Finally, a software paper with proper theorem-proof structure. My algorithms class uses this as a model."
-> — *Professor, computer science*
-
----
-
 ## 🔬 Open Research Problems
 
 We actively seek collaborators on these challenges:
