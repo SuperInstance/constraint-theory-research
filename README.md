@@ -261,9 +261,9 @@ x, y, noise = manifold.snap(0.577, 0.816)  # (0.6, 0.8, 0.0236)
 ```
 
 **Interactive Visualization:**
-- [Pythagorean Snapping Demo](https://constraint-theory.superinstance.ai/simulators/pythagorean/)
-- [KD-Tree Visualization](https://constraint-theory.superinstance.ai/simulators/kdtree/)
-- [Rigidity Explorer](https://constraint-theory.superinstance.ai/experiments/rigidity/)
+- [Pythagorean Snapping Demo](https://constraint-theory-web.pages.dev/simulators/pythagorean/)
+- [KD-Tree Visualization](https://constraint-theory-web.pages.dev/simulators/kdtree/)
+- [Rigidity Explorer](https://constraint-theory-web.pages.dev/experiments/rigidity/)
 
 ---
 
@@ -320,6 +320,6 @@ MIT — see [LICENSE](LICENSE).
 
 **From "it works" to "here's why it works."**
 
-**[Star this repo](https://github.com/SuperInstance/constraint-theory-research)** · **[Read the paper](https://arxiv.org/abs/2503.15847)** · **[Try the demos](https://constraint-theory.superinstance.ai)**
+**[Star this repo](https://github.com/SuperInstance/constraint-theory-research)** · **[Read the paper](https://arxiv.org/abs/2503.15847)** · **[Try the demos](https://constraint-theory-web.pages.dev)**
 
 </div>
