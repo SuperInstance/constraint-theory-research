@@ -90,3 +90,10 @@ temp/
 *.tar.gz
 *.zip
 *.7z
+target/
+node_modules/
+__pycache__/
+*.pyc
+.DS_Store
+*.bak
+*.orig
