@@ -2,7 +2,6 @@
 
 > **The math behind the magic. Formal foundations for deterministic geometry.**
 
-[![arXiv](https://img.shields.io/badge/arXiv-2503.15847-b31b1b)](https://arxiv.org/abs/2503.15847)
 [![GitHub stars](https://img.shields.io/github/stars/SuperInstance/constraint-theory-research?style=social)](https://github.com/SuperInstance/constraint-theory-research)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![CI](https://github.com/SuperInstance/constraint-theory-research/actions/workflows/ci.yml/badge.svg)](https://github.com/SuperInstance/constraint-theory-research/actions/workflows/ci.yml)
@@ -178,7 +177,6 @@ Impact: ML embedding quantization, robotics
   title={Constraint Theory: Deterministic Manifold Snapping
          via Pythagorean Geometry},
   author={SuperInstance},
-  journal={arXiv preprint arXiv:2503.15847},
   year={2025},
   url={https://github.com/SuperInstance/constraint-theory-research}
 }
@@ -186,11 +184,9 @@ Impact: ML embedding quantization, robotics
 
 ### APA
 
-SuperInstance. (2025). Constraint Theory: Deterministic Manifold Snapping via Pythagorean Geometry. *arXiv preprint arXiv:2503.15847*.
 
 ### MLA
 
-SuperInstance. "Constraint Theory: Deterministic Manifold Snapping via Pythagorean Geometry." *arXiv preprint arXiv:2503.15847* (2025).
 
 ---
 
@@ -323,6 +319,5 @@ MIT — see [LICENSE](LICENSE).
 
 **From "it works" to "here's why it works."**
 
-**[Star this repo](https://github.com/SuperInstance/constraint-theory-research)** · **[Read the paper](https://arxiv.org/abs/2503.15847)** · **[Try the demos](https://constraint-theory-web.pages.dev)**
 
 </div>
