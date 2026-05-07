@@ -1,5 +1,8 @@
 # Constraint Theory Research
 
+> **Working papers, not peer-reviewed.** None submitted to arXiv or any journal.
+
+
 > **The math behind the magic. Formal foundations for deterministic geometry.**
 
 [![GitHub stars](https://img.shields.io/github/stars/SuperInstance/constraint-theory-research?style=social)](https://github.com/SuperInstance/constraint-theory-research)
@@ -15,7 +18,7 @@ Constraint Theory provides a mathematical framework for **deterministic geometry
 **Key Results:**
 - O(log n) nearest-neighbor lookup via KD-tree
 - Bounded geodesic noise: `d_g(v, σ(v)) < π/(2n)`
-- Zero hallucination guarantee: all outputs satisfy constraints exactly
+- All outputs satisfy constraints exactly: all outputs satisfy constraints exactly
 
 ---
 
@@ -64,7 +67,7 @@ open GEOMETRIC_INTERPRETATION.md
 | Document | Pages | What You'll Learn |
 |----------|-------|-------------------|
 | [**Mathematical Foundations**](MATHEMATICAL_FOUNDATIONS_DEEP_DIVE.md) | 45 | Ω-geometry, Φ-folding, rigidity theory |
-| [**Theoretical Guarantees**](THEORETICAL_GUARANTEES.md) | 12 | Zero-hallucination proofs |
+| [**Theoretical Guarantees**](THEORETICAL_GUARANTEES.md) | 12 | Verified proofs |
 | [**Geometric Interpretation**](GEOMETRIC_INTERPRETATION.md) | 8 | Visual explanations |
 
 ---
@@ -173,7 +176,7 @@ Impact: ML embedding quantization, robotics
 ### BibTeX
 
 ```bibtex
-@article{constraint_theory_2025,
+@misc{constraint_theory_2025,
   title={Constraint Theory: Deterministic Manifold Snapping
          via Pythagorean Geometry},
   author={SuperInstance},
@@ -194,9 +197,9 @@ Impact: ML embedding quantization, robotics
 
 | Paper | Status | Focus |
 |-------|--------|-------|
-| [Paper 1: Geometric Foundation](papers/paper1_constraint_theory_geometric_foundation.tex) | arXiv Ready | Core theory & architecture |
-| [Paper 2: Pythagorean Snapping](papers/paper2_pythagorean_snapping.tex) | arXiv Ready | Algorithm & complexity |
-| [Paper 3: Production Practice](papers/paper3_deterministic_ai_practice.tex) | arXiv Ready | Applications & deployment |
+| [Paper 1: Geometric Foundation](papers/paper1_constraint_theory_geometric_foundation.tex) | Working Paper | Core theory & architecture |
+| [Paper 2: Pythagorean Snapping](papers/paper2_pythagorean_snapping.tex) | Working Paper | Algorithm & complexity |
+| [Paper 3: Production Practice](papers/paper3_deterministic_ai_practice.tex) | Working Paper | Applications & deployment |
 | [Paper 4: Hidden Dimensions](papers/paper4_hidden_dimensions.tex) | Draft | Exact constraint satisfaction via lifting |
 | [Paper 5: Quantization Integration](papers/paper5_quantization_integration.tex) | Draft | Unified quantization framework |
 | [Paper 6: Dodecet Encoding](papers/DODECET_CONSTRAINT_SYNTHESIS.md) | Draft | 12-bit precision encoding |
@@ -289,7 +292,7 @@ x, y, noise = manifold.snap(0.577, 0.816)  # (0.6, 0.8, 0.0236)
   publisher={Courier Dover Publications}
 }
 
-@article{bentley1975multidimensional,
+@misc{bentley1975multidimensional,
   title={Multidimensional binary search trees used for associative searching},
   author={Bentley, Jon Louis},
   journal={Communications of the ACM},
